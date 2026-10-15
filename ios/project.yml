@@ -1,0 +1,40 @@
+name: AlcoholQuit
+options:
+  bundleIdPrefix: com.alcoholquit
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+targets:
+  AlcoholQuit:
+    type: application
+    platform: iOS
+    sources: [AlcoholQuit]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.alcoholquit.app
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_CFBundleDisplayName: AlcoholQuit
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_ENTITLEMENTS: AlcoholQuit/Resources/AlcoholQuit.entitlements
+        INFOPLIST_KEY_APIBaseURL: "$(API_BASE_URL)"
+        API_BASE_URL: ""
+  AlcoholQuitTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [AlcoholQuitTests]
+    dependencies:
+      - target: AlcoholQuit
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  AlcoholQuit:
+    build:
+      targets:
+        AlcoholQuit: all
+    test:
+      targets: [AlcoholQuitTests]
