@@ -116,3 +116,19 @@ Safety content is draft wellness guidance and requires qualified clinical review
 Backend TypeScript checking and 12 API tests passed, covering real SQLite migrations, signed identity-token validation, replay rejection, rate limiting, account isolation, revisions, retry safety, deletion, and preferences. Local Wrangler migration and HTTP smoke checks were also run. Four native persistence/progress tests and a macOS CI job are included but have not run in this Linux workspace. Check GitHub Actions for the first native build result after pushing.
 
 The product and Xcode project are named Tommy. Existing bundle identifiers, Keychain service identifiers, local storage paths, and the D1 database name are retained so renaming does not disconnect existing data or provisioning. The GitHub repository remains `slayer7-glitch/AlcoholQuit`.
+
+## View iPhone screenshots from Windows
+
+No local Xcode or Apple Developer membership is needed for simulator screenshots. GitHub Actions runs Xcode on a hosted Mac.
+
+1. Open [Actions → Validate](https://github.com/slayer7-glitch/AlcoholQuit/actions/workflows/ci.yml) while signed into GitHub.
+2. Select the newest run for `main`. Screenshots run automatically after pushes. To request a fresh set, choose **Run workflow**, select `main`, and confirm **Run workflow**.
+3. Wait for the `ios` job to finish. The initial build can take several minutes.
+4. Open the run's summary and scroll to **Artifacts**. Download **Tommy-iPhone-Screenshots**.
+5. Extract the ZIP in Windows and open its PNG files in Photos. Subfolders and the exported manifest associate attachments with the screenshot test. The files cover onboarding, Home, check-in, craving support, progress, settings, authentication, and safety.
+
+The screenshots show the actual SwiftUI app in an iPhone Simulator with fictional sample data. Each screen starts with isolated temporary storage, and screenshot routing is compiled only into debug simulator builds. No Apple sign-in or backend credentials are needed. These are static progress previews rather than an interactive Windows app. The screenshot test waits for each screen to load; it does not validate every control or layout.
+
+If screenshots are missing, open the `ios` job and inspect the failed step. A compile failure prevents screenshot generation. **Tommy-iOS-TestResults**, when present, contains diagnostic Xcode results. Screenshot artifacts expire after 14 days; run the workflow again for a fresh download. GitHub-hosted macOS runner availability and billing depend on your repository/account settings. Enable Actions if GitHub prompts you.
+
+This workflow has not been executed locally because this workspace does not include macOS/Xcode. The first GitHub run must confirm native compilation and screenshot capture.

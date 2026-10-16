@@ -5,3 +5,7 @@ node_modules/
 DerivedData/
 *.xcodeproj/
 .DS_Store
+
+# Generated simulator previews
+ios/Screenshots/
+*.xcresult/

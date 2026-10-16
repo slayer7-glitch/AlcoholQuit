@@ -31,10 +31,19 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
+  TommyUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [TommyUITests]
+    dependencies:
+      - target: Tommy
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
 schemes:
   Tommy:
     build:
       targets:
         Tommy: all
     test:
-      targets: [TommyTests]
+      targets: [TommyTests, TommyUITests]
