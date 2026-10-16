@@ -1,12 +1,12 @@
-# AlcoholQuit — Product Requirements Document
+# Tommy — Product Requirements Document
 
 Version: 1.0 · October 15, 2026 · Status: Proposed MVP
 
 ## 1. Product vision
 
-AlcoholQuit is a welcoming iPhone app that helps adults stop drinking through small daily actions, practical craving support, and an encouraging cartoon superhero companion. The experience should feel calm, clear, and supportive, including after a difficult day or a return to drinking.
+Tommy is a welcoming iPhone app that helps adults stop drinking through small daily actions, practical craving support, and an encouraging cartoon superhero companion. The experience should feel calm, clear, and supportive, including after a difficult day or a return to drinking.
 
-Working product name: AlcoholQuit. Final name and mascot artwork require trademark and cultural review before launch.
+Working product name: Tommy. Final name and mascot artwork require trademark and cultural review before launch.
 
 This document specifies the product; it does not represent an implemented app.
 
@@ -208,5 +208,5 @@ Engineering estimates follow approved designs and architecture. Required externa
 | Mascot presentation | Equal boy/girl choices, customization, and skip/reduced-mascot mode |
 | Backend | Cloudflare Workers + D1; add Queues for asynchronous jobs and R2 only if needed |
 | Client | Native iPhone app with SwiftUI, iOS 17+ |
-| Product identity | AlcoholQuit is a working title pending review |
+| Product identity | Tommy is a working title pending review |
 

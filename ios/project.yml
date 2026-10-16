@@ -1,4 +1,4 @@
-name: AlcoholQuit
+name: Tommy
 options:
   bundleIdPrefix: com.alcoholquit
   deploymentTarget:
@@ -7,34 +7,34 @@ settings:
   base:
     SWIFT_VERSION: "5.0"
 targets:
-  AlcoholQuit:
+  Tommy:
     type: application
     platform: iOS
-    sources: [AlcoholQuit]
+    sources: [Tommy]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.alcoholquit.app
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
-        INFOPLIST_KEY_CFBundleDisplayName: AlcoholQuit
+        INFOPLIST_KEY_CFBundleDisplayName: Tommy
         TARGETED_DEVICE_FAMILY: "1"
-        CODE_SIGN_ENTITLEMENTS: AlcoholQuit/Resources/AlcoholQuit.entitlements
+        CODE_SIGN_ENTITLEMENTS: Tommy/Resources/Tommy.entitlements
         INFOPLIST_KEY_APIBaseURL: "$(API_BASE_URL)"
         API_BASE_URL: ""
-  AlcoholQuitTests:
+  TommyTests:
     type: bundle.unit-test
     platform: iOS
-    sources: [AlcoholQuitTests]
+    sources: [TommyTests]
     dependencies:
-      - target: AlcoholQuit
+      - target: Tommy
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
 schemes:
-  AlcoholQuit:
+  Tommy:
     build:
       targets:
-        AlcoholQuit: all
+        Tommy: all
     test:
-      targets: [AlcoholQuitTests]
+      targets: [TommyTests]

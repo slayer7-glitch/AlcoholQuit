@@ -52,7 +52,7 @@ final class AppStore: ObservableObject {
     func erase() {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["daily-check-in"])
         UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["daily-check-in"])
-        try? FileManager.default.removeItem(at: FileManager.default.temporaryDirectory.appending(path: "AlcoholQuit-export.json"))
+        try? FileManager.default.removeItem(at: FileManager.default.temporaryDirectory.appending(path: "Tommy-export.json"))
         canWrite = true; accountID = nil; revisions = [:]; pending = []; cursor = 0
         entries = []; reason = ""; quitDate = .now; companion = .boy; onboarded = false
         Task { await CloudClient.shared.clear() }
@@ -101,7 +101,7 @@ final class AppStore: ObservableObject {
         } catch { syncMessage = error.localizedDescription }
     }
     func export() throws -> URL {
-        let destination = FileManager.default.temporaryDirectory.appending(path: "AlcoholQuit-export.json")
+        let destination = FileManager.default.temporaryDirectory.appending(path: "Tommy-export.json")
         try JSONEncoder().encode(Snapshot(entries: entries, quitDate: quitDate, companion: companion, onboarded: onboarded, reason: reason, accountID: accountID, revisions: revisions, pending: pending, cursor: cursor)).write(to: destination, options: [.atomic, .completeFileProtection])
         return destination
     }

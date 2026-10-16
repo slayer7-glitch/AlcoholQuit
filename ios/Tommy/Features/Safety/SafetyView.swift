@@ -10,7 +10,7 @@ struct SafetyView: View {
                     Text("Get urgent medical help").font(.title2.bold())
                     Text("Seizures, hallucinations, or severe confusion can be signs of a medical emergency. Contact your local emergency services immediately. Don't wait for this app to respond.")
                 }
-                Text("AlcoholQuit provides general wellness support. It does not diagnose conditions, manage withdrawal, or replace professional care. Nobody monitors your entries or dispatches help.")
+                Text("Tommy provides general wellness support. It does not diagnose conditions, manage withdrawal, or replace professional care. Nobody monitors your entries or dispatches help.")
                 Text("If you feel unsafe or at risk of harming yourself, contact local emergency services or a crisis service in your region.")
                 Text("Draft safety content: clinical review is required before public release.").font(.footnote).foregroundStyle(.secondary)
             }.padding(24)

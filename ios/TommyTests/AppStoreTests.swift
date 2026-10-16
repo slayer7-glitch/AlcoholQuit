@@ -1,5 +1,5 @@
 import XCTest
-@testable import AlcoholQuit
+@testable import Tommy
 
 @MainActor
 final class AppStoreTests: XCTestCase {

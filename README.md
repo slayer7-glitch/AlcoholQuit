@@ -1,4 +1,4 @@
-# AlcoholQuit
+# Tommy
 
 A native iPhone wellness companion and a Cloudflare Workers API, organized by feature. Product requirements are in [PRD.md](PRD.md).
 
@@ -7,7 +7,7 @@ A native iPhone wellness companion and a Cloudflare Workers API, organized by fe
 ```text
 ios/
   project.yml                     # XcodeGen project definition
-  AlcoholQuit/
+  Tommy/
     App/                          # Application entry point and tab navigation
     Features/
       Authentication/             # Apple sign-in, Keychain sessions, cloud requests
@@ -46,7 +46,7 @@ The backend implements Apple identity-token verification, hashed one-hour bearer
 
 1. Install Xcode with iOS 17+ SDK and XcodeGen (`brew install xcodegen`).
 2. Run `cd ios && xcodegen generate`.
-3. Open `AlcoholQuit.xcodeproj`, select the AlcoholQuit scheme and an iPhone Simulator, then Run.
+3. Open `Tommy.xcodeproj`, select the Tommy scheme and an iPhone Simulator, then Run.
 4. For a device build, choose your own unique bundle identifier and signing team in Xcode. Enable Sign in with Apple for the identifier in your Apple Developer account and match it with the backend's `APPLE_CLIENT_ID`. Set the app build setting `API_BASE_URL` to your HTTPS Worker origin. Leaving it blank keeps the app local-only.
 
 Example build check on a Mac:
@@ -54,7 +54,7 @@ Example build check on a Mac:
 ```sh
 cd ios
 xcodegen generate
-xcodebuild -project AlcoholQuit.xcodeproj -scheme AlcoholQuit -sdk iphonesimulator -configuration Debug CODE_SIGNING_ALLOWED=NO build
+xcodebuild -project Tommy.xcodeproj -scheme Tommy -sdk iphonesimulator -configuration Debug CODE_SIGNING_ALLOWED=NO build
 ```
 
 Native compilation and UI behavior have not been verified in this Linux environment. No generated Xcode project or signing credentials are committed.
@@ -114,3 +114,5 @@ Safety content is draft wellness guidance and requires qualified clinical review
 ## Validation in this workspace
 
 Backend TypeScript checking and 12 API tests passed, covering real SQLite migrations, signed identity-token validation, replay rejection, rate limiting, account isolation, revisions, retry safety, deletion, and preferences. Local Wrangler migration and HTTP smoke checks were also run. Four native persistence/progress tests and a macOS CI job are included but have not run in this Linux workspace. Check GitHub Actions for the first native build result after pushing.
+
+The product and Xcode project are named Tommy. Existing bundle identifiers, Keychain service identifiers, local storage paths, and the D1 database name are retained so renaming does not disconnect existing data or provisioning. The GitHub repository remains `slayer7-glitch/AlcoholQuit`.

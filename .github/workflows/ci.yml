@@ -29,4 +29,4 @@ jobs:
         working-directory: ios
         run: |
           DEVICE_ID=$(xcrun simctl list devices available -j | python3 -c 'import json,sys; d=json.load(sys.stdin); print(next(x["udid"] for devices in d["devices"].values() for x in devices if x["name"].startswith("iPhone")))')
-          xcodebuild -project AlcoholQuit.xcodeproj -scheme AlcoholQuit -destination "platform=iOS Simulator,id=$DEVICE_ID" CODE_SIGNING_ALLOWED=NO test
+          xcodebuild -project Tommy.xcodeproj -scheme Tommy -destination "platform=iOS Simulator,id=$DEVICE_ID" CODE_SIGNING_ALLOWED=NO test

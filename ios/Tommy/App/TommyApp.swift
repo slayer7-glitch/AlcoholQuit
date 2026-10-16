@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct AlcoholQuitApp: App {
+struct TommyApp: App {
     @StateObject private var store = AppStore()
     @Environment(\.scenePhase) private var scenePhase
     var body: some Scene {
